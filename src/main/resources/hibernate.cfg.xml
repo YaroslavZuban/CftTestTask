@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/cft_test</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">admin</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">false</property>
+
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.transaction.coordinator_class">jdbc</property>
+
+        <property name="hibernate.hikari.minimumIdle">0</property>
+        <property name="hibernate.hikari.maximumPoolSize">100</property>
+
+        <mapping class="org.example.model.BookReturn"/>
+        <mapping class="org.example.model.Author"/>
+        <mapping class="org.example.model.Book"/>
+        <mapping class="org.example.model.Gender"/>
+        <mapping class="org.example.model.Issuance"/>
+        <mapping class="org.example.model.Reader"/>
+    </session-factory>
+</hibernate-configuration>
